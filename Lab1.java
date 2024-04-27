@@ -1,11 +1,20 @@
 import java.util.Arrays;
 
 public class Lab1 {
+
     public static void main(String[] args) {
 
+        int[] numbers = {5, -2, 11, 3456, 0, -5585};
+        double x = 2;
+        double y = 3;
 
-        // Task 1
-        int[] numbers = {5, 2, 11, 8};
+        System.out.println("Task 1: " + task1(numbers));
+        System.out.println("Task 2: " + Arrays.toString(task2(numbers)));
+        System.out.println("Task 3: " + task3(x, y));
+
+    }
+
+    public static int task1(int[] numbers) {
 
         int min = numbers[0];
         int max = numbers[0];
@@ -19,19 +28,22 @@ public class Lab1 {
             }
         }
 
-        System.out.println(max - min);
+        return max - min;
+    }
 
+    public static int[] task2(int[] numbers) {
 
-        // Task 2
         Arrays.sort(numbers);
-        System.out.println(numbers[0]);
-        System.out.println(numbers[1]);
 
+        int[] results = {numbers[0], numbers[1]};
 
-        // Task 3
-        double x = 2;
-        double y = 3;
-        System.out.println((x * x) + (((4 * y) / 5 - x) * ((4 * y) / 5 - x)));
+        return results;
 
     }
+
+    public static double task3(double x, double y) {
+
+        return (x * x) + ((4 * y) / 5 - x) * ((4 * y) / 5 - x);
+    }
+
 }
